@@ -4,10 +4,14 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 
+from django_tinder.views import homepage
+
 urlpatterns = [
+    path("__reload__/", include("django_browser_reload.urls")),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('users/',include('users.urls')),
+    path("",homepage)
 ]
 
 if settings.DEBUG:
