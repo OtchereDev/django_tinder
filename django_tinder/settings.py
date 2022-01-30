@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     # third party apps
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
 
     # own apps
     'chat',
@@ -53,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -148,3 +153,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AllAuth Settings
 
 SITE_ID = 1
+
+# tailwind config
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
